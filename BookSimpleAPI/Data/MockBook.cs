@@ -8,6 +8,21 @@ namespace BookSimpleAPI.Data
 {
     public class MockBook : IBook
     {
+        private static List<Book> BookList()
+        {
+            var book = new List<Book>()
+            {
+                new Book {BookId = 1, Author = "Google", DateTime = new DateTime(2021, 1, 1), Description="for IT og øje for detaljer, er datamatiker lige noget for dig. Som datamatiker", Name="Book Simple API", Price = 450, Title = "Google API Test"},
+                new Book {BookId = 1, Author = "Google", DateTime = new DateTime(2021, 7, 25), Description="for IT og øje for detaljer, er datamatiker lige noget for dig. Som datamatiker", Name="Book Simple API", Price = 450, Title = "Google API Test"},
+                new Book {BookId = 1, Author = "Google", DateTime = new DateTime(2021, 1, 1), Description="for IT og øje for detaljer, er datamatiker lige noget for dig. Som datamatiker", Name="Book Simple API", Price = 450, Title = "Google API Test"},
+                new Book {BookId = 1, Author = "Google", DateTime = new DateTime(2021, 1, 1), Description="for IT og øje for detaljer, er datamatiker lige noget for dig. Som datamatiker", Name="Book Simple API", Price = 450, Title = "Google API Test"},
+                new Book {BookId = 1, Author = "Google", DateTime = new DateTime(2021, 1, 1), Description="for IT og øje for detaljer, er datamatiker lige noget for dig. Som datamatiker", Name="Book Simple API", Price = 450, Title = "Google API Test"},
+                new Book {BookId = 1, Author = "Google", DateTime = new DateTime(2021, 1, 1), Description="for IT og øje for detaljer, er datamatiker lige noget for dig. Som datamatiker", Name="Book Simple API", Price = 450, Title = "Google API Test"}
+            };
+            return book;           
+        }
+
+
         public List<Book> Books()
         {
             throw new NotImplementedException();
