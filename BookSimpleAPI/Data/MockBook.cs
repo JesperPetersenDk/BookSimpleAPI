@@ -12,12 +12,12 @@ namespace BookSimpleAPI.Data
         {
             var book = new List<Book>()
             {
-                new Book {BookId = 1, Author = "Google", DateTime = new DateTime(2021, 1, 1), Description="for IT og øje for detaljer, er datamatiker lige noget for dig. Som datamatiker", Name="Book Simple API", Price = 450, Title = "Google API Test"},
-                new Book {BookId = 1, Author = "Google", DateTime = new DateTime(2021, 7, 25), Description="for IT og øje for detaljer, er datamatiker lige noget for dig. Som datamatiker", Name="Book Simple API", Price = 450, Title = "Google API Test"},
-                new Book {BookId = 1, Author = "Google", DateTime = new DateTime(2021, 1, 1), Description="for IT og øje for detaljer, er datamatiker lige noget for dig. Som datamatiker", Name="Book Simple API", Price = 450, Title = "Google API Test"},
-                new Book {BookId = 1, Author = "Google", DateTime = new DateTime(2021, 1, 1), Description="for IT og øje for detaljer, er datamatiker lige noget for dig. Som datamatiker", Name="Book Simple API", Price = 450, Title = "Google API Test"},
-                new Book {BookId = 1, Author = "Google", DateTime = new DateTime(2021, 1, 1), Description="for IT og øje for detaljer, er datamatiker lige noget for dig. Som datamatiker", Name="Book Simple API", Price = 450, Title = "Google API Test"},
-                new Book {BookId = 1, Author = "Google", DateTime = new DateTime(2021, 1, 1), Description="for IT og øje for detaljer, er datamatiker lige noget for dig. Som datamatiker", Name="Book Simple API", Price = 450, Title = "Google API Test"}
+                new Book {BookId = 1,  DateTime = new DateTime(2021, 1, 1), Name="Book Simple API", Price = 450, Title = "Google API Test"},
+                new Book {BookId = 2,  DateTime = new DateTime(2021, 7, 25),Name="Datamatiker", Price = 450, Title = "Google API Test"},
+                new Book {BookId = 3,  DateTime = new DateTime(2021, 5, 25), Name="Book Simple API", Price = 450, Title = "Google API Test"},
+                new Book {BookId = 4,  DateTime = new DateTime(2021, 8, 25), Name="Software", Price = 450, Title = "Google API Test"},
+                new Book {BookId = 5,  DateTime = new DateTime(2021, 4, 25), Name="Book", Price = 450, Title = "Google API Test"},
+                new Book {BookId = 6,  DateTime = new DateTime(2021, 3, 25),Name="Testing", Price = 450, Title = "Google API Test"}
             };
             return book;           
         }
@@ -25,7 +25,7 @@ namespace BookSimpleAPI.Data
 
         public List<Book> Books()
         {
-            throw new NotImplementedException();
+            return BookList();
         }
 
         public List<Book> GetBooksByDate(int Date, string tags)
