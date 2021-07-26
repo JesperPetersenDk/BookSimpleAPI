@@ -33,17 +33,7 @@ namespace BookSimpleAPI.Data
             throw new NotImplementedException();
         }
 
-        public List<Book> GetBooksByOrderDescription(string description)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Book> GetBooksByOrderPrice(int orderPrice)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Book> GetBooksByOrderTitle(string title)
         {
             throw new NotImplementedException();
         }
