@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31423.177
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSimpleAPI", "BookSimpleAPI\BookSimpleAPI.csproj", "{22CE6F68-4B4D-4308-8A4A-490A48BC0CFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSimpleAPI.Xunit.Test", "BookSimpleAPI.Xunit.Test\BookSimpleAPI.Xunit.Test.csproj", "{BB9439E1-10C6-4C7D-B602-C915D1E31F1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22CE6F68-4B4D-4308-8A4A-490A48BC0CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22CE6F68-4B4D-4308-8A4A-490A48BC0CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22CE6F68-4B4D-4308-8A4A-490A48BC0CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22CE6F68-4B4D-4308-8A4A-490A48BC0CFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB9439E1-10C6-4C7D-B602-C915D1E31F1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB9439E1-10C6-4C7D-B602-C915D1E31F1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB9439E1-10C6-4C7D-B602-C915D1E31F1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB9439E1-10C6-4C7D-B602-C915D1E31F1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A2AA796-1D91-4325-B815-9D5C2DC3A3F1}
+	EndGlobalSection
+EndGlobal
