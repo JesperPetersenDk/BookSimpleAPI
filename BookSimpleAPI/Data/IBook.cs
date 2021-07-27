@@ -9,7 +9,7 @@ namespace BookSimpleAPI.Data
     public interface IBook
     {
 
-        List<Book> Books();
+        List<Book> GetBooks();
         Book GetBookSingle(int id);
         Book GetBookSignelByName(string name);
         List<Book> GetBooksByOrderPrice(int orderPrice);

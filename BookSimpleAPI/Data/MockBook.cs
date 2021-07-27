@@ -23,7 +23,7 @@ namespace BookSimpleAPI.Data
         }
 
 
-        public List<Book> Books()
+        public List<Book> GetBooks()
         {
             return BookList();
         }

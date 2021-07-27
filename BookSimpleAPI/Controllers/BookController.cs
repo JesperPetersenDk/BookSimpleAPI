@@ -18,5 +18,20 @@ namespace BookSimpleAPI.Controllers
         {
             _book = book;
         }
+
+
+        [HttpGet]
+        public ActionResult<IEnumerable<MockBook>> GetAll()
+        {
+            try
+            {
+                var commandItem = _book.GetBooks();
+                return Ok(commandItem);
+            }
+            catch (Exception e)
+            {
+                return NotFound(e.Message);
+            }
+        }
     }
 }

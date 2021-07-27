@@ -1,3 +1,4 @@
+using BookSimpleAPI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,9 @@ namespace BookSimpleAPI
         {
 
             services.AddControllers();
+
+            services.AddScoped<IBook, MockBook>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookSimpleAPI", Version = "v1" });
