@@ -14,5 +14,35 @@ namespace BookSimpleAPI.Xunit.Test
             var result = _mockBook.GetBooks();
             Assert.NotNull(result);
         }
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        public void GetSingleBookNotNull(int id)
+        {
+            var result = _mockBook.GetBookSingle(id);
+            Assert.NotNull(result);
+        }
+
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(-2)]
+        [InlineData(-3)]
+        [InlineData(-4)]
+        public void GetSingleBookIsNull(int id)
+        {
+            var result = _mockBook.GetBookSingle(id);
+            Assert.Null(result);
+        }
+
+        [Theory]
+        [InlineData(1, "big")]
+        public void GetSingleBookByTagsAndDate(int day, string tags)
+        {
+            var result = _mockBook.GetBooksByDate(day, tags);
+            Assert.NotNull(result);
+        }
     }
 }
