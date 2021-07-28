@@ -39,6 +39,8 @@ namespace BookSimpleAPI.Xunit.Test
 
         [Theory]
         [InlineData(1, "big")]
+        [InlineData(2, "big")]
+        [InlineData(3, "bigger")]
         public void GetSingleBookByTagsAndDate(int day, string tags)
         {
             var result = _mockBook.GetBooksByDate(day, tags);
