@@ -17,13 +17,13 @@ namespace BookSimpleAPI.Helper.Extensions
             else
             {
                 var dt = DateTime.Now.AddDays(days);
-                if(tags.Equals("større") || tags.Equals("big") || tags.Equals("bigger") || tags.Equals("bigger than"))
+                if(tags.Equals("stor") || tags.Equals("big") || tags.Equals("bigger"))
                 {
-                    return (List<Book>)str.Where(r => r.DateTime > dt);
+                    return str.Where(r => r.DateTime > dt).ToList();
                 }
-                else if(tags.Equals("lille") || tags.Equals("mindre") || tags.Equals("less") || tags.Equals("less than"))
+                else if(tags.Equals("lille") || tags.Equals("less"))
                 {
-                    return (List<Book>)str.Where(r => r.DateTime < dt);
+                    return str.Where(r => r.DateTime < dt).ToList();
                 }
                 else
                 {
