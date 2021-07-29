@@ -33,7 +33,7 @@ namespace BookSimpleAPI.Helper.Extensions
                 }
                 else
                 {
-                    return str;
+                    return null;
                 }
             }
 
