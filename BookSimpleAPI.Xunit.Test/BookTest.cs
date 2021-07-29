@@ -73,5 +73,14 @@ namespace BookSimpleAPI.Xunit.Test
             var result = _mockBook.GetBooksByDate(day, tags);
             Assert.Null(result);
         }
+
+        [Theory]
+        [InlineData(1, "Book")]
+        [InlineData(4, "Hej med dig")]
+        public void GetSingleBookByTagsAndDateIsNull_NotTagsMatch(int day, string tags)
+        {
+            var result = _mockBook.GetBooksByDate(day, tags);
+            Assert.Null(result);
+        }
     }
 }
