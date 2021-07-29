@@ -38,13 +38,40 @@ namespace BookSimpleAPI.Xunit.Test
         }
 
         [Theory]
-        [InlineData(1, "big")]
+        [InlineData(1, "stor")]
         [InlineData(2, "big")]
         [InlineData(3, "bigger")]
         public void GetSingleBookByTagsAndDate(int day, string tags)
         {
             var result = _mockBook.GetBooksByDate(day, tags);
             Assert.NotNull(result);
+        }
+
+        [Theory]
+        [InlineData(1, "")]
+        [InlineData(325235, "")]
+        public void GetSingleBookByTagsAndDateIsNullByEmptyTags(int day, string tags)
+        {
+            var result = _mockBook.GetBooksByDate(day, tags);
+            Assert.Null(result);
+        }
+
+        [Theory]
+        [InlineData(-10, "stor")]
+        [InlineData(-1, "big")]
+        public void GetSingleBookByTagsAndDateIsNullByNegative(int day, string tags)
+        {
+            var result = _mockBook.GetBooksByDate(day, tags);
+            Assert.Null(result);
+        }
+
+        [Theory]
+        [InlineData(-10, "")]
+        [InlineData(-1, "")]
+        public void GetSingleBookByTagsAndDateIsNullByNegativeAndEmptyTags(int day, string tags)
+        {
+            var result = _mockBook.GetBooksByDate(day, tags);
+            Assert.Null(result);
         }
     }
 }
