@@ -10,10 +10,16 @@ namespace BookSimpleAPI.Helper.Extensions
     public static class Extensions
     {
 
+        public static int ToInt(this string str)
+        {
+            int.TryParse(str, out var returnValue);
+            return returnValue;
+        }
+
         public static List<Book> ByDateAndTags(this List<Book> str, int days, string tags)
         {
-            if (string.IsNullOrEmpty(tags) || tags.Length == 0) return str;
-            else if (days < 0) return str;
+            if (string.IsNullOrEmpty(tags) || tags.Length == 0) return null;
+            else if (days < 0) return null;
             else
             {
                 var dt = DateTime.Now.AddDays(days);
