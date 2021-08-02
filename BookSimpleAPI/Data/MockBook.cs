@@ -29,11 +29,6 @@ namespace BookSimpleAPI.Data
             return BookList();
         }
 
-        public List<Book> GetBooksByDate(int Date, string tags)
-        {
-            return BookList().ByDateAndTags(Date, tags);
-        }
-
         public List<Book> GetBooksByOrderPrice(int orderPrice)
         {
             throw new NotImplementedException();
