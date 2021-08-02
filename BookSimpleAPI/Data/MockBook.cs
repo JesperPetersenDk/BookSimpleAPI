@@ -35,11 +35,6 @@ namespace BookSimpleAPI.Data
             return result.ByDateAndTags(BookList(), Date, tags);
         }
 
-        public List<Book> GetBooksByOrderPrice(int orderPrice)
-        {
-            throw new NotImplementedException();
-        }
-
         public Book GetBookSignelByName(string name)
         {
             throw new NotImplementedException();
