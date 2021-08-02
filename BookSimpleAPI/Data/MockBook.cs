@@ -31,7 +31,8 @@ namespace BookSimpleAPI.Data
 
         public List<Book> GetBooksByDate(int Date, string tags)
         {
-            return BookList().ByDateAndTags(Date, tags);
+            var result = new ExtensionsData();
+            return result.ByDateAndTags(BookList(), Date, tags);
         }
 
         public List<Book> GetBooksByOrderPrice(int orderPrice)

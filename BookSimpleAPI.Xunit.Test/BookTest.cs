@@ -1,4 +1,5 @@
 using BookSimpleAPI.Data;
+using BookSimpleAPI.Helper.Extensions;
 using System;
 using Xunit;
 
@@ -38,22 +39,14 @@ namespace BookSimpleAPI.Xunit.Test
         }
 
         [Theory]
-        [InlineData(1, "stor")]
-        [InlineData(2, "big")]
-        [InlineData(3, "bigger")]
-        public void GetSingleBookByTagsAndDate(int day, string tags)
-        {
-            var result = _mockBook.GetBooksByDate(day, tags);
-            Assert.NotNull(result);
-        }
-
-        [Theory]
         [InlineData(1, "")]
         [InlineData(325235, "")]
         public void GetSingleBookByTagsAndDateIsNullByEmptyTags(int day, string tags)
         {
-            var result = _mockBook.GetBooksByDate(day, tags);
-            Assert.Null(result);
+            var resultData = new ExtensionsData();
+            var result = _mockBook.GetBooks();
+            var completeResult = resultData.ByDateAndTags(result, day, tags);
+            Assert.Null(completeResult);
         }
 
         [Theory]
@@ -61,8 +54,10 @@ namespace BookSimpleAPI.Xunit.Test
         [InlineData(-1, "big")]
         public void GetSingleBookByTagsAndDateIsNullByNegative(int day, string tags)
         {
-            var result = _mockBook.GetBooksByDate(day, tags);
-            Assert.Null(result);
+            var resultData = new ExtensionsData();
+            var result = _mockBook.GetBooks();
+            var completeResult = resultData.ByDateAndTags(result, day, tags);
+            Assert.Null(completeResult);
         }
 
         [Theory]
@@ -70,8 +65,10 @@ namespace BookSimpleAPI.Xunit.Test
         [InlineData(-1, "")]
         public void GetSingleBookByTagsAndDateIsNullByNegativeAndEmptyTags(int day, string tags)
         {
-            var result = _mockBook.GetBooksByDate(day, tags);
-            Assert.Null(result);
+            var resultData = new ExtensionsData();
+            var result = _mockBook.GetBooks();
+            var completeResult = resultData.ByDateAndTags(result, day, tags);
+            Assert.Null(completeResult);
         }
 
         [Theory]
@@ -79,8 +76,10 @@ namespace BookSimpleAPI.Xunit.Test
         [InlineData(4, "Hej med dig")]
         public void GetSingleBookByTagsAndDateIsNull_NotTagsMatch(int day, string tags)
         {
-            var result = _mockBook.GetBooksByDate(day, tags);
-            Assert.Null(result);
+            var resultData = new ExtensionsData();
+            var result = _mockBook.GetBooks();
+            var completeResult = resultData.ByDateAndTags(result, day, tags);
+            Assert.Null(completeResult);
         }
     }
 }
