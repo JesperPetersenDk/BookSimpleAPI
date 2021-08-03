@@ -8,6 +8,7 @@ namespace BookSimpleAPI.Xunit.Test
     public class BookTest
     {
         private readonly MockBook _mockBook = new MockBook();
+        private readonly ExtensionsData _extensions = new ExtensionsData();
 
         [Fact]
         public void GetListWithBook()
@@ -43,9 +44,8 @@ namespace BookSimpleAPI.Xunit.Test
         [InlineData(325235, "")]
         public void GetSingleBookByTagsAndDateIsNullByEmptyTags(int day, string tags)
         {
-            var resultData = new ExtensionsData();
             var result = _mockBook.GetBooks();
-            var completeResult = resultData.ByDateAndTags(result, day, tags);
+            var completeResult = _extensions.ByDateAndTags(result, day, tags);
             Assert.Null(completeResult);
         }
 
@@ -54,9 +54,8 @@ namespace BookSimpleAPI.Xunit.Test
         [InlineData(-1, "big")]
         public void GetSingleBookByTagsAndDateIsNullByNegative(int day, string tags)
         {
-            var resultData = new ExtensionsData();
             var result = _mockBook.GetBooks();
-            var completeResult = resultData.ByDateAndTags(result, day, tags);
+            var completeResult = _extensions.ByDateAndTags(result, day, tags);
             Assert.Null(completeResult);
         }
 
@@ -65,9 +64,8 @@ namespace BookSimpleAPI.Xunit.Test
         [InlineData(1, "big")]
         public void GetSingleBookByTagsAndDateIsNotNullBySuccess(int day, string tags)
         {
-            var resultData = new ExtensionsData();
             var result = _mockBook.GetBooks();
-            var completeResult = resultData.ByDateAndTags(result, day, tags);
+            var completeResult = _extensions.ByDateAndTags(result, day, tags);
             Assert.NotNull(completeResult);
         }
 
@@ -76,9 +74,8 @@ namespace BookSimpleAPI.Xunit.Test
         [InlineData(-1, "")]
         public void GetSingleBookByTagsAndDateIsNullByNegativeAndEmptyTags(int day, string tags)
         {
-            var resultData = new ExtensionsData();
             var result = _mockBook.GetBooks();
-            var completeResult = resultData.ByDateAndTags(result, day, tags);
+            var completeResult = _extensions.ByDateAndTags(result, day, tags);
             Assert.Null(completeResult);
         }
 
@@ -87,9 +84,8 @@ namespace BookSimpleAPI.Xunit.Test
         [InlineData(4, "Hej med dig")]
         public void GetSingleBookByTagsAndDateIsNull_NotTagsMatch(int day, string tags)
         {
-            var resultData = new ExtensionsData();
             var result = _mockBook.GetBooks();
-            var completeResult = resultData.ByDateAndTags(result, day, tags);
+            var completeResult = _extensions.ByDateAndTags(result, day, tags);
             Assert.Null(completeResult);
         }
 
@@ -98,11 +94,10 @@ namespace BookSimpleAPI.Xunit.Test
         [InlineData("Yi Yi")]
         [InlineData("Datamatiker")]
         [InlineData("Google API Test")]
-        public void GetBookDataBySingleWord_IsNotNull(string name)
+        public void GetBookDataBySingleWord_IsNotNull_TitleAndName(string name)
         {
-            var resultData = new ExtensionsData();
             var result = _mockBook.GetBooks();
-            var completeResult = resultData.FindNameAndTitleOnBooks(result, name);
+            var completeResult = _extensions.FindNameAndTitleOnBooks(result, name);
             Assert.NotNull(completeResult);
         }
 
@@ -110,11 +105,32 @@ namespace BookSimpleAPI.Xunit.Test
         [InlineData("Hej med dig vi tester")]
         [InlineData("x-gamer")]
         [InlineData("Hej Jesper")]
-        public void GetBookDataBySingleWord_IsNull(string name)
+        public void GetBookDataBySingleWord_IsNull_TitleAndName(string name)
         {
-            var resultData = new ExtensionsData();
             var result = _mockBook.GetBooks();
-            var completeResult = resultData.FindNameAndTitleOnBooks(result, name);
+            var completeResult = _extensions.FindNameAndTitleOnBooks(result, name);
+            Assert.Null(completeResult);
+        }
+
+        [Theory]
+        [InlineData("Book Simple API", 1)]
+        [InlineData("Datamatiker", 2)]
+        [InlineData("Yi Yi Yi", 6)]
+        public void GetBookDataBySingleWithNameAndTitle_IsNotNull(string name, int id)
+        {
+            var result = _mockBook.GetBookSingle(id);
+            var completeResult = _extensions.FindSingleWithNameAndTitleOnBook(result, name);
+            Assert.NotNull(completeResult);
+        }
+
+        [Theory]
+        [InlineData("Book Simple API", 4)]
+        [InlineData("Datamatiker", 5)]
+        [InlineData("Yi Yi Yi", 3)]
+        public void GetBookDataBySingleWithNameAndTitle_IsNull(string name, int id)
+        {
+            var result = _mockBook.GetBookSingle(id);
+            var completeResult = _extensions.FindSingleWithNameAndTitleOnBook(result, name);
             Assert.Null(completeResult);
         }
     }
