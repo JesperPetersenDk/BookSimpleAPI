@@ -46,8 +46,7 @@ namespace BookSimpleAPI.Helper.Extensions
         public Book FindSingleWithNameAndTitleOnBook(Book book, string name)
         {
             if (string.IsNullOrEmpty(name) || name.Length == 0) return null;
-            else if(book == null)
-                return null;
+            else if(book == null) return null;
             else
             {
                 if(book.Name.Contains(name) || book.Title.Contains(name))
