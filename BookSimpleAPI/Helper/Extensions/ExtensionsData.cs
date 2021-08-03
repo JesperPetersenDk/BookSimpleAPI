@@ -29,5 +29,15 @@ namespace BookSimpleAPI.Helper.Extensions
                 }
             }
         }
+
+        public List<Book> FindNameAndTitleOnBooks(List<Book> books, string name)
+        {
+            if (string.IsNullOrEmpty(name) || name.Length == 0) return null;
+            else if (books.Count == 0) return null;
+            else
+            {
+                return books.Where(r => r.Name.Contains(name) || r.Title.Contains(name)).ToList();
+            }
+        }
     }
 }
