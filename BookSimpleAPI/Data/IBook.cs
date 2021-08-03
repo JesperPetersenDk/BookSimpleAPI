@@ -12,7 +12,6 @@ namespace BookSimpleAPI.Data
         List<Book> GetBooks();
         Book GetBookSingle(int id);
         Book GetBookSignelByName(string name);
-        List<Book> GetBooksByOrderPrice(int orderPrice);
         List<Book> GetBooksByDate(int Date, string tags);
 
     }
