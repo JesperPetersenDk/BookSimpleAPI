@@ -18,7 +18,7 @@ namespace BookSimpleAPI.Data
                 new Book {BookId = 3,  DateTime = new DateTime(2021, 5, 25), Name="Book Simple API", Price = 863, Title = "Google API Test"},
                 new Book {BookId = 4,  DateTime = new DateTime(2021, 8, 25), Name="Software", Price = 450, Title = "Google API Test"},
                 new Book {BookId = 5,  DateTime = new DateTime(2021, 4, 25), Name="Book", Price = 467, Title = "Google API Test"},
-                new Book {BookId = 6,  DateTime = new DateTime(2021, 3, 25),Name="Testing", Price = 32, Title = "Google API Test"}
+                new Book {BookId = 6,  DateTime = new DateTime(2021, 3, 25),Name="Yi Yi Yi", Price = 32, Title = "Google API Test"}
             };
             return book;           
         }
