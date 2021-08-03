@@ -36,7 +36,10 @@ namespace BookSimpleAPI.Helper.Extensions
             else if (books.Count == 0) return null;
             else
             {
-                return books.Where(r => r.Name.Contains(name) || r.Title.Contains(name)).ToList();
+                var result = books.Where(r => r.Name.Contains(name) || r.Title.Contains(name)).ToList();
+                if(result.Count == 0)
+                    return null;
+                return result;
             }
         }
     }
