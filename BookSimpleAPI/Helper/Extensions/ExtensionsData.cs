@@ -42,5 +42,20 @@ namespace BookSimpleAPI.Helper.Extensions
                 return result;
             }
         }
+
+        public Book FindSingleWithNameAndTitleOnBook(Book book, string name)
+        {
+            if (string.IsNullOrEmpty(name) || name.Length == 0) return null;
+            else if(book == null)
+                return null;
+            else
+            {
+                if(book.Name.Contains(name) || book.Title.Contains(name))
+                {
+                    return book;
+                }
+                return null;
+            }
+        }
     }
 }
