@@ -37,7 +37,9 @@ namespace BookSimpleAPI.Data
 
         public Book GetBookSignelByName(string name)
         {
-            throw new NotImplementedException();
+            var result = new ExtensionsData();
+            var first = BookList().FirstOrDefault(r => r.Name == name || r.Title == name);
+            return result.FindSingleWithNameAndTitleOnBook(first, name);
         }
 
         public Book GetBookSingle(int id)
