@@ -92,5 +92,30 @@ namespace BookSimpleAPI.Xunit.Test
             var completeResult = resultData.ByDateAndTags(result, day, tags);
             Assert.Null(completeResult);
         }
+
+        [Theory]
+        [InlineData("e")]
+        [InlineData("Yi Yi")]
+        [InlineData("Datamatiker")]
+        [InlineData("Google API Test")]
+        public void GetBookDataBySingleWord_IsNotNull(string name)
+        {
+            var resultData = new ExtensionsData();
+            var result = _mockBook.GetBooks();
+            var completeResult = resultData.FindNameAndTitleOnBooks(result, name);
+            Assert.NotNull(completeResult);
+        }
+
+        [Theory]
+        [InlineData("Hej med dig vi tester")]
+        [InlineData("x-gamer")]
+        [InlineData("Hej Jesper")]
+        public void GetBookDataBySingleWord_IsNull(string name)
+        {
+            var resultData = new ExtensionsData();
+            var result = _mockBook.GetBooks();
+            var completeResult = resultData.FindNameAndTitleOnBooks(result, name);
+            Assert.Null(completeResult);
+        }
     }
 }
